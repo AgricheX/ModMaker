@@ -101,6 +101,7 @@
             this.label152 = new System.Windows.Forms.Label();
             this.label153 = new System.Windows.Forms.Label();
             this.label154 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button13
@@ -307,7 +308,9 @@
             "Spawn Frozen Effect",
             "Spawn Seed",
             "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Shield",
+            "Summon a Demon",
+            "Summon a Skeleton"});
             this.comboBox30.Location = new System.Drawing.Point(77, 194);
             this.comboBox30.Name = "comboBox30";
             this.comboBox30.Size = new System.Drawing.Size(144, 24);
@@ -546,16 +549,11 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
             "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
             "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox34.Location = new System.Drawing.Point(287, 278);
             this.comboBox34.Name = "comboBox34";
             this.comboBox34.Size = new System.Drawing.Size(144, 24);
@@ -585,16 +583,11 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
             "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
             "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox35.Location = new System.Drawing.Point(287, 248);
             this.comboBox35.Name = "comboBox35";
             this.comboBox35.Size = new System.Drawing.Size(144, 24);
@@ -624,16 +617,11 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
             "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
             "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox36.Location = new System.Drawing.Point(287, 218);
             this.comboBox36.Name = "comboBox36";
             this.comboBox36.Size = new System.Drawing.Size(144, 24);
@@ -663,16 +651,11 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
             "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
             "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox37.Location = new System.Drawing.Point(287, 188);
             this.comboBox37.Name = "comboBox37";
             this.comboBox37.Size = new System.Drawing.Size(144, 24);
@@ -702,16 +685,11 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
             "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
             "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox38.Location = new System.Drawing.Point(287, 158);
             this.comboBox38.Name = "comboBox38";
             this.comboBox38.Size = new System.Drawing.Size(144, 24);
@@ -741,16 +719,11 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
             "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
             "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox39.Location = new System.Drawing.Point(287, 128);
             this.comboBox39.Name = "comboBox39";
             this.comboBox39.Size = new System.Drawing.Size(144, 24);
@@ -921,8 +894,7 @@
             "Spawn Slowness Effect",
             "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox40.Location = new System.Drawing.Point(499, 278);
             this.comboBox40.Name = "comboBox40";
             this.comboBox40.Size = new System.Drawing.Size(144, 24);
@@ -960,8 +932,7 @@
             "Spawn Slowness Effect",
             "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox41.Location = new System.Drawing.Point(499, 248);
             this.comboBox41.Name = "comboBox41";
             this.comboBox41.Size = new System.Drawing.Size(144, 24);
@@ -999,8 +970,7 @@
             "Spawn Slowness Effect",
             "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox42.Location = new System.Drawing.Point(499, 218);
             this.comboBox42.Name = "comboBox42";
             this.comboBox42.Size = new System.Drawing.Size(144, 24);
@@ -1038,8 +1008,7 @@
             "Spawn Slowness Effect",
             "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox43.Location = new System.Drawing.Point(499, 188);
             this.comboBox43.Name = "comboBox43";
             this.comboBox43.Size = new System.Drawing.Size(144, 24);
@@ -1077,8 +1046,7 @@
             "Spawn Slowness Effect",
             "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox44.Location = new System.Drawing.Point(499, 158);
             this.comboBox44.Name = "comboBox44";
             this.comboBox44.Size = new System.Drawing.Size(144, 24);
@@ -1116,8 +1084,7 @@
             "Spawn Slowness Effect",
             "Spawn Frozen Effect",
             "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Grow Vegetation Random"});
             this.comboBox45.Location = new System.Drawing.Point(499, 128);
             this.comboBox45.Name = "comboBox45";
             this.comboBox45.Size = new System.Drawing.Size(144, 24);
@@ -1277,7 +1244,6 @@
             "Spawn Grenade",
             "Spawn Bomb",
             "Spawn Santa Bomb",
-            "Spawn Apply Force",
             "Spawn Blood Rain",
             "Spawn Curse",
             "Spawn Cure",
@@ -1286,16 +1252,8 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
-            "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
-            "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
-            "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Tornado"});
             this.comboBox46.Location = new System.Drawing.Point(713, 278);
             this.comboBox46.Name = "comboBox46";
             this.comboBox46.Size = new System.Drawing.Size(144, 24);
@@ -1316,7 +1274,6 @@
             "Spawn Grenade",
             "Spawn Bomb",
             "Spawn Santa Bomb",
-            "Spawn Apply Force",
             "Spawn Blood Rain",
             "Spawn Curse",
             "Spawn Cure",
@@ -1325,16 +1282,8 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
-            "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
-            "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
-            "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Tornado"});
             this.comboBox47.Location = new System.Drawing.Point(713, 248);
             this.comboBox47.Name = "comboBox47";
             this.comboBox47.Size = new System.Drawing.Size(144, 24);
@@ -1355,7 +1304,6 @@
             "Spawn Grenade",
             "Spawn Bomb",
             "Spawn Santa Bomb",
-            "Spawn Apply Force",
             "Spawn Blood Rain",
             "Spawn Curse",
             "Spawn Cure",
@@ -1364,16 +1312,8 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
-            "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
-            "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
-            "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Tornado"});
             this.comboBox48.Location = new System.Drawing.Point(713, 218);
             this.comboBox48.Name = "comboBox48";
             this.comboBox48.Size = new System.Drawing.Size(144, 24);
@@ -1394,7 +1334,6 @@
             "Spawn Grenade",
             "Spawn Bomb",
             "Spawn Santa Bomb",
-            "Spawn Apply Force",
             "Spawn Blood Rain",
             "Spawn Curse",
             "Spawn Cure",
@@ -1403,16 +1342,8 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
-            "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
-            "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
-            "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Tornado"});
             this.comboBox49.Location = new System.Drawing.Point(713, 188);
             this.comboBox49.Name = "comboBox49";
             this.comboBox49.Size = new System.Drawing.Size(144, 24);
@@ -1433,7 +1364,6 @@
             "Spawn Grenade",
             "Spawn Bomb",
             "Spawn Santa Bomb",
-            "Spawn Apply Force",
             "Spawn Blood Rain",
             "Spawn Curse",
             "Spawn Cure",
@@ -1442,16 +1372,8 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
-            "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
-            "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
-            "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Tornado"});
             this.comboBox50.Location = new System.Drawing.Point(713, 158);
             this.comboBox50.Name = "comboBox50";
             this.comboBox50.Size = new System.Drawing.Size(144, 24);
@@ -1472,7 +1394,6 @@
             "Spawn Grenade",
             "Spawn Bomb",
             "Spawn Santa Bomb",
-            "Spawn Apply Force",
             "Spawn Blood Rain",
             "Spawn Curse",
             "Spawn Cure",
@@ -1481,16 +1402,8 @@
             "Spawn Meteorite",
             "Spawn Explosion Wave",
             "Spawn Lightning",
-            "Spawn Burning Effect On Target",
             "Spawn Fire Rain",
-            "Spawn Random teleport",
-            "Spawn Poisoned Effect On Target",
-            "Spawn Tornado",
-            "Spawn Slowness Effect",
-            "Spawn Frozen Effect",
-            "Spawn Seed",
-            "Spawn Grow Vegetation Random",
-            "Spawn Shield"});
+            "Spawn Tornado"});
             this.comboBox51.Location = new System.Drawing.Point(713, 128);
             this.comboBox51.Name = "comboBox51";
             this.comboBox51.Size = new System.Drawing.Size(144, 24);
@@ -1579,6 +1492,25 @@
             this.label154.TabIndex = 80;
             this.label154.Text = "Death Action";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(33)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Enabled = false;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(310, 343);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(201, 46);
+            this.button1.TabIndex = 98;
+            this.button1.Text = "ReadMe";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UmActions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1586,6 +1518,7 @@
             this.BackgroundImage = global::Mod_Maker.Properties.Resources.adaptiveBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(874, 401);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.label146);
             this.Controls.Add(this.textBox93);
@@ -1746,5 +1679,6 @@
         private System.Windows.Forms.Label label152;
         private System.Windows.Forms.Label label153;
         private System.Windows.Forms.Label label154;
+        private System.Windows.Forms.Button button1;
     }
 }

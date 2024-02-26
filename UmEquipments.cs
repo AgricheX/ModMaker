@@ -265,6 +265,8 @@ namespace Mod_Maker
 
                     comboBox1.Text = string.Empty;
                     comboBox8.Text = string.Empty;
+                    pictureBox1.Image.Dispose();
+                    pictureBox2.Image.Dispose();
                     pictureBox1.Image = null;
                     pictureBox2.Image = null;
                     radioButton1.Checked = false;
@@ -510,6 +512,8 @@ namespace Mod_Maker
 
                     comboBox1.Text = string.Empty;
                     comboBox8.Text = string.Empty;
+                    pictureBox1.Image.Dispose();
+                    pictureBox2.Image.Dispose();
                     pictureBox1.Image = null;
                     pictureBox2.Image = null;
                     radioButton1.Checked = false;

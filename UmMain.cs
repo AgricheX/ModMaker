@@ -180,6 +180,9 @@ namespace Mod_Maker
             Program.UnitCode0.Clear();
             Program.UnitCode1.Clear();
             Program.UnitName.Clear();
+            Program.SwimCounter = 0;
+            Program.WalkCounter = 0;
+            Program.UnitsSpritesCounter = 0;
 
             Program.ProjectileCode.Clear();
             Program.ProjectileIcon.Clear();
@@ -1318,6 +1321,7 @@ namespace Mod_Maker
                 textBox1.Clear();
                 textBox2.Clear();
                 comboBox1.Text = string.Empty;
+                pictureBox12.Image.Dispose();
                 pictureBox12.Image = null;
 
                 Program.DeleteModMakerRecycleBin();

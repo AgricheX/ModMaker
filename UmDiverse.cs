@@ -367,6 +367,7 @@ namespace Mod_Maker
                         comboBox4.Text = string.Empty;
                         comboBox5.Text = string.Empty;
                         comboBox6.Text = string.Empty;
+                        pictureBox1.Image.Dispose();
                         pictureBox1.Image = null;
                         radioButton1.Checked = false;
                         radioButton2.Checked = false;

@@ -366,6 +366,7 @@ namespace Mod_Maker
                 textBox6.Text = "";
                 comboBox1.Text = "";
                 comboBox2.Text = "";
+                pictureBox1.Image.Dispose();
                 pictureBox1.Image = null;
                 groupBox3.Enabled = false;
             }

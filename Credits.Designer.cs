@@ -357,15 +357,15 @@
             // 
             this.linkLabel5.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(33)))));
             this.linkLabel5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel5.LinkColor = System.Drawing.Color.White;
-            this.linkLabel5.Location = new System.Drawing.Point(275, 368);
+            this.linkLabel5.Location = new System.Drawing.Point(201, 368);
             this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(587, 24);
+            this.linkLabel5.Size = new System.Drawing.Size(661, 24);
             this.linkLabel5.TabIndex = 25;
             this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Join Our Community To Choose Custom Powers Every Week!";
+            this.linkLabel5.Text = "Join Our Community To Choose Custom Actions Powers Every Week!";
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.White;
             this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 

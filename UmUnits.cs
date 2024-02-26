@@ -220,10 +220,30 @@ namespace Mod_Maker
             }
             else
             {
-                string SwimSpriteName = Path.GetFileNameWithoutExtension(pictureBox1.ImageLocation);
-                string SwimSpriteNameList = Path.GetFileName(pictureBox1.ImageLocation);
+                int swimcounter = Program.SwimCounter;
+                int spritescounter = Program.UnitsSpritesCounter;
+                spritescounter++;
+                Program.UnitsSpritesCounter = spritescounter;
+
+                string directorySwimImagens = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads\Mod Maker Recycle Bin\";
+                string newFolder = "Swim" + spritescounter;
+                string newFolder2 = Path.Combine(directorySwimImagens, newFolder);
+
+                Directory.CreateDirectory(newFolder2);
+
+                string diretorioSwimSpriteImage = Path.Combine(newFolder2, "swim_" + swimcounter + ".png");
+                string SwimSpriteName = "swim_" + swimcounter;
+                string SwimSpriteNameList = "swim_" + swimcounter + ".png";
+                comboBox47.Text = "swim_" + swimcounter + ".png";
+                string swimspritediretory = pictureBox1.ImageLocation;
+
+                File.Copy(swimspritediretory, diretorioSwimSpriteImage);
+                pictureBox1.Image = Image.FromFile(diretorioSwimSpriteImage);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
                 Program.SwimName.Add(SwimSpriteName);
                 Program.SwimNameList.Add(SwimSpriteNameList);
+
                 string swimspriteBase64;
                 using (MemoryStream swimspritesave = new MemoryStream())
                 {
@@ -231,7 +251,14 @@ namespace Mod_Maker
                     swimspriteBase64 = Convert.ToBase64String(swimspritesave.ToArray());
                 }
                 Program.SwimSprite.Add(swimspriteBase64);
+
                 MessageBox.Show("Swim Sprite Save Successfully!");
+
+                comboBox47.Text = string.Empty;
+                pictureBox1.Image.Dispose();
+                pictureBox1.Image = null;
+                swimcounter++;
+                Program.SwimCounter = swimcounter;
             }
         }
 
@@ -265,8 +292,27 @@ namespace Mod_Maker
             }
             else
             {
-                string WalkSpriteName = Path.GetFileNameWithoutExtension(pictureBox2.ImageLocation);
-                string WalkSpriteNameList = Path.GetFileName(pictureBox2.ImageLocation);
+                int walkcounter = Program.WalkCounter;
+                int walkspritecounter = Program.UnitsSpritesCounter;
+                walkspritecounter++;
+                Program.UnitsSpritesCounter = walkspritecounter;
+
+                string directoryWalkImagens = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads\Mod Maker Recycle Bin\";
+                string newFolder = "Walk" + walkspritecounter;
+                string newFolder2 = Path.Combine(directoryWalkImagens, newFolder);
+                    
+                Directory.CreateDirectory(newFolder2);
+
+                string diretorioWalkSpriteImage = Path.Combine(newFolder2, "walk_" + walkcounter + ".png");
+                string WalkSpriteName = "walk_" + walkcounter;
+                string WalkSpriteNameList = "walk_" + walkcounter + ".png";
+                comboBox48.Text = "walk_" + walkcounter + ".png";
+                string walkspritediretory = pictureBox2.ImageLocation;
+
+                File.Copy(walkspritediretory, diretorioWalkSpriteImage);
+                pictureBox2.Image = Image.FromFile(diretorioWalkSpriteImage);
+                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
                 Program.WalkName.Add(WalkSpriteName);
                 Program.WalkNameList.Add(WalkSpriteNameList);
                 string walkspriteBase64;
@@ -276,7 +322,14 @@ namespace Mod_Maker
                     walkspriteBase64 = Convert.ToBase64String(walkspritesave.ToArray());
                 }
                 Program.WalkSprite.Add(walkspriteBase64);
+
                 MessageBox.Show("Walk Sprite Save Successfully!");
+
+                comboBox48.Text = string.Empty;
+                pictureBox2.Image.Dispose();
+                pictureBox2.Image = null;
+                walkcounter++;
+                Program.WalkCounter = walkcounter;
             }
         }
         #endregion
@@ -577,8 +630,8 @@ namespace Mod_Maker
                     textBox15.Text = "1";
                     textBox16.Text = "1";
 
-                    pictureBox1.Image = null;
-                    pictureBox2.Image = null;
+                    comboBox53.Text = string.Empty;
+                    pictureBox3.Image.Dispose();
                     pictureBox3.Image = null;
                     radioButton1.Checked = false;
                     radioButton2.Checked = false;
@@ -587,6 +640,8 @@ namespace Mod_Maker
                     SpellUnits.Clear();
                     Program.SwimName.Clear();
                     Program.WalkName.Clear();
+                    Program.SwimCounter = 0;
+                    Program.WalkCounter = 0;
                 }
                 else if (radioButton2.Checked)
                 {
@@ -831,8 +886,8 @@ namespace Mod_Maker
                     textBox15.Text = "1";
                     textBox16.Text = "1";
 
-                    pictureBox1.Image = null;
-                    pictureBox2.Image = null;
+                    comboBox53.Text = string.Empty;
+                    pictureBox3.Image.Dispose();
                     pictureBox3.Image = null;
                     radioButton1.Checked = false;
                     radioButton2.Checked = false;
@@ -841,6 +896,8 @@ namespace Mod_Maker
                     SpellUnits.Clear();
                     Program.SwimName.Clear();
                     Program.WalkName.Clear();
+                    Program.SwimCounter = 0;
+                    Program.WalkCounter = 0;
                 }
             }
             else

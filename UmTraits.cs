@@ -326,6 +326,7 @@ namespace Mod_Maker
                 comboBox12.Text = string.Empty;
                 comboBox13.Text = string.Empty;
                 comboBox14.Text = string.Empty;
+                pictureBox3.Image.Dispose();
                 pictureBox3.Image = null;
             }
             else

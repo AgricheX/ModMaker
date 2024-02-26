@@ -51,6 +51,7 @@ namespace Mod_Maker
                 Directory.CreateDirectory(creationprojectilesfolder);
 
             }
+            
         }
 
         public static void DeleteModMakerRecycleBin()
@@ -147,15 +148,18 @@ namespace Mod_Maker
         #region units
         public static List<string> SwimSprite { get; set; } = new List<string>();
         public static List<string> SwimNameList { get; set; } = new List<string>();
+        public static int SwimCounter { get; set; } = 0;
         public static List<string> SwimName { get; set; } = new List<string>();
         public static List<string> WalkSprite { get; set; } = new List<string>();
         public static List<string> WalkNameList { get; set; } = new List<string>();
+        public static int WalkCounter { get; set; } = 0;
         public static List<string> WalkName { get; set; } = new List<string>();
         public static List<string> UnitIcon { get; set; } = new List<string>();
         public static List<string> UnitIconNameList { get; set; } = new List<string>();
         public static List<string> UnitCode0 { get; set; } = new List<string>();
         public static List<string> UnitCode1 { get; set; } = new List<string>();
         public static List<string> UnitName { get; set; } = new List<string>();
+        public static int UnitsSpritesCounter { get; set; } = 0;
         #endregion
 
         #region projectiles

@@ -21,7 +21,7 @@ namespace Mod_Maker
         #endregion
 
         #region powers
-        private string Powers(string action)
+        private string AttackPowers(string action)
         {
             string power = " ";
 
@@ -140,6 +140,162 @@ namespace Mod_Maker
             else if (action == "Spawn Shield")
             {
                 power += "pSelf.CallMethod(\"addStatusEffect\", \"shield\", 5f);";
+            }
+            else if (action == "Summon a Demon")
+            {
+                power += "        ActorData pData = (ActorData)Reflection.GetField(typeof(Actor), a, \"data\");\n" +
+                "        int count = 0;\n" +
+                "        if (pData.custom_data_int == null || !pData.custom_data_int.TryGetValue(\"demonCount\", out count))\n" +
+                "        {\n" +
+                "            pData.set(\"demonCount\", 0);\n" +
+                "        }\n" +
+                "        if (count < 1)\n" +
+                "        {\n" +
+                "            var act = World.world.units.createNewUnit(\"demon\", pTile);\n" +
+                "            act.kingdom = pTarget.kingdom;\n" +
+                "            count++;\n" +
+                "            pData.set(\"demonCount\", count);\n" +
+                "        }\n";
+            }
+            else if (action == "Summon a Skeleton")
+            {
+                power += "        ActorData pData = (ActorData)Reflection.GetField(typeof(Actor), a, \"data\");\n" +
+                "        int count = 0;\n" +
+                "        if (pData.custom_data_int == null || !pData.custom_data_int.TryGetValue(\"skeletonCount\", out count))\n" +
+                "        {\n" +
+                "            pData.set(\"skeletonCount\", 0);\n" +
+                "        }\n" +
+                "        if (count < 1)\n" +
+                "        {\n" +
+                "            var act = World.world.units.createNewUnit(\"skeleton\", pTile);\n" +
+                "           act.kingdom = pTarget.kingdom;\n" +
+                "            count++;\n" +
+                "            pData.set(\"skeletonCount\", count);\n" +
+                "        }\n";
+            }
+
+            return power;
+        }
+
+        private string RegularPowers(string action)
+        {
+            string power = " ";
+
+            if (action == "NoneAction")
+            {
+                power += " ";
+            }
+            else if (action == "Spawn Napalm Bomb")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n" +
+                    "        EffectsLibrary.spawn(\"fx_napalm_flash\", pTile, null, null, 0f, -1f, -1f);\n" +
+                    "        EffectsLibrary.spawnAtTileRandomScale(\"fx_explosion_tiny\", pTile, 0.15f, 0.3f);\n";
+            }
+            else if (action == "Spawn AntiMatter Bomb")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n" +
+                    "        EffectsLibrary.spawn(\"fx_antimatter_effect\", pTile, null, null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Spawn Atomic Bomb")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n" +
+                    "        EffectsLibrary.spawn(\"fx_nuke_flash\", pTile, \"atomicBomb\", null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Spawn Czar Bomb")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n" +
+                    "        EffectsLibrary.spawn(\"fx_nuke_flash\", pTile, \"czarBomba\", null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Spawn Grenade")
+            {
+                power += "MapAction.damageWorld(pTile, 5, AssetManager.terraform.get(\"grenade\"), null);\n" +
+                    "        EffectsLibrary.spawnAtTileRandomScale(\"fx_explosion_small\", pTile, 0.1f, 0.15f);\n";
+            }
+            else if (action == "Spawn Bomb")
+            {
+                power += "EffectsLibrary.spawnAtTileRandomScale(\"fx_explosion_middle\", pTile, 0.45f, 0.6f);\n" +
+                    "        MapAction.damageWorld(pTile, 10, AssetManager.terraform.get(\"bomb\"), null);\n";
+            }
+            else if (action == "Spawn Santa Bomb")
+            {
+                power += "MapAction.damageWorld(pTile, 10, AssetManager.terraform.get(\"santa_bomb\"), null);\n" +
+                    "        EffectsLibrary.spawnAtTileRandomScale(\"fx_explosion_small\", pTile, 0.45f, 0.6f);\n";
+            }
+            else if (action == "Spawn Apply Force")
+            {
+                power += "World.world.applyForce(pTile, 3, 0.3f, true, true, 0, null, pTarget, null);\n";
+            }
+            else if (action == "Spawn Blood Rain")
+            {
+                power += "World.world.dropManager.spawn(pTile, \"bloodRain\", 15f, -1f);\n";
+            }
+            else if (action == "Spawn Curse")
+            {
+                power += "World.world.dropManager.spawn(pTile, \"curse\", 15f, -1f);\n";
+            }
+            else if (action == "Spawn Cure")
+            {
+                power += "World.world.dropManager.spawn(pTile, \"cure\", 15f, -1f);\n";
+            }
+            else if (action == "Spawn Shake")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n";
+            }
+            else if (action == "Spawn Earthquake")
+            {
+                power += "World.world.earthquakeManager.startQuake(pTile, EarthquakeType.RandomPower);\n";
+            }
+            else if (action == "Spawn Meteorite")
+            {
+                power += "EffectsLibrary.spawn(\"fx_meteorite\", pTarget.currentTile, \"meteorite_disaster\", null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Spawn Explosion Wave")
+            {
+                power += "EffectsLibrary.spawnExplosionWave(pTile.posV3, 3f, 0.5f);\n";
+            }
+            else if (action == "Spawn Lightning")
+            {
+                power += "MapBox.spawnLightningMedium(pTile, 0.15f);\n";
+            }
+            else if (action == "Spawn Burning Effect On Target")
+            {
+                power += "ActionLibrary.addBurningEffectOnTarget(null, pTarget, null);\n";
+            }
+            else if (action == "Spawn Fire Rain")
+            {
+                power += "ActionLibrary.castFire(null, pTarget, null);\n";
+            }
+            else if (action == "Spawn Random teleport")
+            {
+                power += "ActionLibrary.teleportRandom(null, pTarget, null);\n";
+            }
+            else if (action == "Spawn Poisoned Effect On Target")
+            {
+                power += "ActionLibrary.addPoisonedEffectOnTarget(null, pTarget, null);\n";
+            }
+            else if (action == "Spawn Tornado")
+            {
+                power += "ActionLibrary.castTornado(null, pTarget, null);\n";
+            }
+            else if (action == "Spawn Seed")
+            {
+                power += "DropsLibrary.useSeedOn(pTile, TopTileLibrary.grass_low, TopTileLibrary.grass_high);\n";
+            }
+            else if (action == "Spawn Grow Vegetation Random")
+            {
+                power += "BuildingActions.tryGrowVegetationRandom(pTile, VegetationType.Trees, false, false);\n";
+            }
+            else if (action == "Spawn Slowness Effect")
+            {
+                power += "pTarget.CallMethod(\"addStatusEffect\", \"slowness\", -1f);\n";
+            }
+            else if (action == "Spawn Frozen Effect")
+            {
+                power += "pTarget.CallMethod(\"addStatusEffect\", \"frozen\", 15f);\n";
+            }
+            else if (action == "Spawn Shield")
+            {
+                power += "pTile.CallMethod(\"addStatusEffect\", \"shield\", 5f);";
             }
 
             return power;
@@ -272,6 +428,124 @@ namespace Mod_Maker
 
             return power;
         }
+
+        private string DeathPowers(string action)
+        {
+            string power = " ";
+
+            if (action == "NoneAction")
+            {
+                power += " ";
+            }
+            else if (action == "Spawn Napalm Bomb")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n" +
+                    "        EffectsLibrary.spawn(\"fx_napalm_flash\", pTile, null, null, 0f, -1f, -1f);\n" +
+                    "        EffectsLibrary.spawnAtTileRandomScale(\"fx_explosion_tiny\", pTile, 0.15f, 0.3f);\n";
+            }
+            else if (action == "Spawn AntiMatter Bomb")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n" +
+                    "        EffectsLibrary.spawn(\"fx_antimatter_effect\", pTile, null, null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Spawn Atomic Bomb")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n" +
+                    "        EffectsLibrary.spawn(\"fx_nuke_flash\", pTile, \"atomicBomb\", null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Spawn Czar Bomb")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n" +
+                    "        EffectsLibrary.spawn(\"fx_nuke_flash\", pTile, \"czarBomba\", null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Spawn Grenade")
+            {
+                power += "MapAction.damageWorld(pTile, 5, AssetManager.terraform.get(\"grenade\"), null);\n" +
+                    "        EffectsLibrary.spawnAtTileRandomScale(\"fx_explosion_small\", pTile, 0.1f, 0.15f);\n";
+            }
+            else if (action == "Spawn Bomb")
+            {
+                power += "EffectsLibrary.spawnAtTileRandomScale(\"fx_explosion_middle\", pTile, 0.45f, 0.6f);\n" +
+                    "        MapAction.damageWorld(pTile, 10, AssetManager.terraform.get(\"bomb\"), null);\n";
+            }
+            else if (action == "Spawn Santa Bomb")
+            {
+                power += "MapAction.damageWorld(pTile, 10, AssetManager.terraform.get(\"santa_bomb\"), null);\n" +
+                    "        EffectsLibrary.spawnAtTileRandomScale(\"fx_explosion_small\", pTile, 0.45f, 0.6f);\n";
+            }
+            else if (action == "Spawn Blood Rain")
+            {
+                power += "World.world.dropManager.spawn(pTile, \"bloodRain\", 15f, -1f);\n";
+            }
+            else if (action == "Spawn Curse")
+            {
+                power += "World.world.dropManager.spawn(pTile, \"curse\", 15f, -1f);\n";
+            }
+            else if (action == "Spawn Cure")
+            {
+                power += "World.world.dropManager.spawn(pTile, \"cure\", 15f, -1f);\n";
+            }
+            else if (action == "Spawn Shake")
+            {
+                power += "World.world.startShake(0.3f, 0.01f, 2f, true, true);\n";
+            }
+            else if (action == "Spawn Earthquake")
+            {
+                power += "World.world.earthquakeManager.startQuake(pTile, EarthquakeType.RandomPower);\n";
+            }
+            else if (action == "Spawn Meteorite")
+            {
+                power += "EffectsLibrary.spawn(\"fx_meteorite\", pTarget.currentTile, \"meteorite_disaster\", null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Spawn Explosion Wave")
+            {
+                power += "EffectsLibrary.spawnExplosionWave(pTile.posV3, 3f, 0.5f);\n";
+            }
+            else if (action == "Spawn Lightning")
+            {
+                power += "MapBox.spawnLightningMedium(pTile, 0.15f);\n";
+            }
+            else if (action == "Spawn Fire Rain")
+            {
+                power += "ActionLibrary.castFire(null, pTarget, null);\n";
+            }
+            else if (action == "Spawn Tornado")
+            {
+                power += "ActionLibrary.castTornado(null, pTarget, null);\n";
+            }
+            else if (action == "Spawn Seed")
+            {
+                power += "DropsLibrary.useSeedOn(pTile, TopTileLibrary.grass_low, TopTileLibrary.grass_high);\n";
+            }
+            else if (action == "Spawn Grow Vegetation Random")
+            {
+                power += "BuildingActions.tryGrowVegetationRandom(pTile, VegetationType.Trees, false, false);\n";
+            }
+            else if (action == "Relive Infinitely")
+            {
+                power += "Actor ab = pTarget.ab;\n" +
+            "        var act = World.world.units.createNewUnit(ab.asset.id, pTile, 0f);\n" +
+            "        if (pTarget.kingdom.isAlive())\n" +
+            "        act.kingdom = pTarget.kingdom;\n" +
+            "        ActorTool.copyUnitToOtherUnit(ab, act);\n" +
+            "        act.data.health += 100;\n" +
+            "        EffectsLibrary.spawn(\"fx_spawn\", act.currentTile, null, null, 0f, -1f, -1f);\n";
+            }
+            else if (action == "Become a Dragon")
+            {
+                power += "Actor ab = pTarget.ab;\n" +
+            "        ab.removeTrait(\"cursed\");\n" +
+            "        ab.removeTrait(\"infected\");\n" +
+            "        ab.removeTrait(\"mushSpores\");\n" +
+            "        ab.removeTrait(\"tumorInfection\");\n" +
+            "        Actor actor = World.world.units.createNewUnit(SA.dragon, ab.currentTile, 0f);\n" +
+            "        ActorTool.copyUnitToOtherUnit(ab, actor);\n" +
+            "        EffectsLibrary.spawn(\"fx_spawn\", actor.currentTile, null, null, 0f, -1f, -1f);\n";
+            }
+
+            return power;
+        }
+
         #endregion
 
         #region createaction
@@ -291,12 +565,12 @@ namespace Mod_Maker
                 string TrueAttackSomeoneActionName = NewNewAttackSomeoneActionNamee;
 
                 string AttackSomeoneActionTime = textBox23.Text;
-                string AttackSomeoneActionPower1 = Powers(comboBox28.Text);
-                string AttackSomeoneActionPower2 = Powers(comboBox29.Text);
-                string AttackSomeoneActionPower3 = Powers(comboBox30.Text);
-                string AttackSomeoneActionPower4 = Powers(comboBox31.Text);
-                string AttackSomeoneActionPower5 = Powers(comboBox32.Text);
-                string AttackSomeoneActionPower6 = Powers(comboBox33.Text);
+                string AttackSomeoneActionPower1 = AttackPowers(comboBox28.Text);
+                string AttackSomeoneActionPower2 = AttackPowers(comboBox29.Text);
+                string AttackSomeoneActionPower3 = AttackPowers(comboBox30.Text);
+                string AttackSomeoneActionPower4 = AttackPowers(comboBox31.Text);
+                string AttackSomeoneActionPower5 = AttackPowers(comboBox32.Text);
+                string AttackSomeoneActionPower6 = AttackPowers(comboBox33.Text);
 
                 string AttackSomeoneAction = " \n" +
                 "        }\n" +
@@ -345,12 +619,12 @@ namespace Mod_Maker
                 string TrueRegularActionName = NewNewRegularActionNamee;
 
                 string RegularActionTime = textBox90.Text;
-                string RegularActionPower1 = Powers(comboBox39.Text);
-                string RegularActionPower2 = Powers(comboBox38.Text);
-                string RegularActionPower3 = Powers(comboBox37.Text);
-                string RegularActionPower4 = Powers(comboBox36.Text);
-                string RegularActionPower5 = Powers(comboBox35.Text);
-                string RegularActionPower6 = Powers(comboBox34.Text);
+                string RegularActionPower1 = RegularPowers(comboBox39.Text);
+                string RegularActionPower2 = RegularPowers(comboBox38.Text);
+                string RegularActionPower3 = RegularPowers(comboBox37.Text);
+                string RegularActionPower4 = RegularPowers(comboBox36.Text);
+                string RegularActionPower5 = RegularPowers(comboBox35.Text);
+                string RegularActionPower6 = RegularPowers(comboBox34.Text);
 
                 string RegularAction = " \n" +
                 "        }\n" +
@@ -449,12 +723,12 @@ namespace Mod_Maker
                 string TrueDeathActionName = NewNewDeathActionNamee;
 
                 string DeathActionTime = textBox94.Text;
-                string DeathActionPower1 = Powers(comboBox51.Text);
-                string DeathActionPower2 = Powers(comboBox50.Text);
-                string DeathActionPower3 = Powers(comboBox49.Text);
-                string DeathActionPower4 = Powers(comboBox48.Text);
-                string DeathActionPower5 = Powers(comboBox47.Text);
-                string DeathActionPower6 = Powers(comboBox46.Text);
+                string DeathActionPower1 = DeathPowers(comboBox51.Text);
+                string DeathActionPower2 = DeathPowers(comboBox50.Text);
+                string DeathActionPower3 = DeathPowers(comboBox49.Text);
+                string DeathActionPower4 = DeathPowers(comboBox48.Text);
+                string DeathActionPower5 = DeathPowers(comboBox47.Text);
+                string DeathActionPower6 = DeathPowers(comboBox46.Text);
 
                 string DeathAction = " \n" +
                 "        }\n" +
@@ -484,6 +758,15 @@ namespace Mod_Maker
                 MessageBox.Show("Fill in All Blanks First!");
             }
         }
+        #endregion
+
+        #region utils
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          MessageBox.Show("Please, in 'Death Action' only one Resurrection or Transformation action at a time.\nPlease, in Attack Action only one Summon Action at a time.", "Important Warning", MessageBoxButtons.OK);
+        }
+
         #endregion
     }
 }
